@@ -1,0 +1,25 @@
+{
+  "name": "dobbelspel",
+  "version": "1.0.0",
+  "description": "Dobbelspel voor SinteKerstEnNieuw met custom resultaten.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack serve --port 12345",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ruben Janssen",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "html-loader": "^4.2.0",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^5.5.3"
+  }
+}

@@ -1,0 +1,39 @@
+:root {
+  --color-dark: hsl(279, 100%, 8%);
+  --color-light: #dedede;
+  --color-medium: #ababab;
+
+
+  --color-text: var(--color-light);
+  --color-background: var(--color-dark);
+  
+  --font: Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font);
+  overflow-x: hidden;
+
+  /* display: grid;
+  gap: 2em; */
+}
+
+h1 {
+  margin-bottom: 2em;
+}
+
+main {
+  min-height: 50em;
+  text-align: center;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@import url(./form.css);
+@import url(./dice.css);

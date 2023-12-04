@@ -1,0 +1,132 @@
+:root {
+  --dice-size: 20vw;
+  --dice-translate: 10vw;
+}
+.dicefield {
+  background-color: rgba(0,0,0,.1);
+  border-radius: 5em;
+  border: 1px solid rgba(255,255,255,.5);
+  height: calc(100vh - 10em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dice {
+  /* background-color: var(--color-light); */
+  cursor: pointer;
+  width: var(--dice-size);
+  height: var(--dice-size);
+  color: var(--color-dark);
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform .5s linear;
+  
+  &.spin {
+    animation: spin 1s infinite linear;
+  }
+
+  &.one {
+    transform: rotateX(180deg) rotateY(0deg);
+  }
+
+  &.two {
+    transform: rotateX(180deg) rotateY(90deg);
+  }
+
+  &.three {
+    transform: rotateX(450deg) rotateY(90deg);
+  }
+
+  &.four {
+    transform: rotateX(0deg) rotateY(90deg);
+  }
+
+  &.five {
+    transform: rotateX(270deg) rotateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+.face {
+  position: absolute;
+  width: var(--dice-size);
+  height:var(--dice-size);
+  border: 1px solid var(--color-medium);
+  background-color: var(--color-light);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10em;
+  transform: translateZ(var(--dice-translate));
+
+  &.one {
+    transform: rotateX(-180deg) translateZ(var(--dice-translate));
+  }
+
+  &.two {
+    transform: rotateY(90deg) translateZ(var(--dice-translate)) rotateZ(180deg);
+  }
+
+  &.three {
+    transform: rotateX(-90deg) translateZ(var(--dice-translate)) rotateZ(-90deg);
+  }
+
+  &.four {
+    transform: rotateY(-90deg) translateZ(var(--dice-translate));
+  }
+
+  &.five {
+    transform: rotateX(90deg) translateZ(var(--dice-translate));
+  }
+
+  &.six {
+    transform: rotateX(0deg) translateZ(var(--dice-translate));
+  }
+}
+
+li {
+  display: none;
+}
+
+.actions {
+  position: absolute;
+  bottom: 1em;
+  text-align: left;
+  font-size: 3em;
+  
+}
+.actions.one ul li:nth-child(1) {
+  display: block;
+}
+  
+.actions.two ul li:nth-child(2) {
+  display: block;
+}
+
+.actions.three ul li:nth-child(3) {
+  display: block;
+}
+
+.actions.four ul li:nth-child(4) {
+  display: block;
+}
+
+.actions.five ul li:nth-child(5) {
+  display: block;
+}
+
+.actions.six ul li:nth-child(6) {
+  display: block;
+}
