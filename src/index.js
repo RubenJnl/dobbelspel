@@ -68,8 +68,12 @@ const rollDice = () => {
         rolledClass = "rolin";
     }
     dice.classList.add(rolledClass)
-    actionsList.classList.add(rolledClass)
     dice.classList.remove('spin')
+
+    setTimeout(() => {
+      actionsList.classList.add(rolledClass);
+    }, 700)
+    
   }, rollTime)
 
 }
