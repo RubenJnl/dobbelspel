@@ -1,6 +1,7 @@
 import css from '../styles/dobbel.css'
 
-const dice = document.getElementById("dice")
+const playfield = document.getElementById('playfield')
+const dice = document.getElementById('dice')
 const min = 1
 const max = 6
 const minTime = 2000;
@@ -76,7 +77,7 @@ const rollDice = () => {
 
     resultListTimeout = setTimeout(() => {
       actionsList.classList.add(rolledClass);
-    }, 700)
+    }, 500)
     
   }, rollTime)
 
@@ -131,6 +132,7 @@ btnStart.addEventListener('click', () => {
   if (rolledClass){
     actionsList.classList.remove(rolledClass);
   }
+  playfield.classList.add('active')
   dice.addEventListener('click', rollDice)
   updateList()
   document.getElementsByTagName('aside')[0].classList.toggle('open')
@@ -138,6 +140,7 @@ btnStart.addEventListener('click', () => {
 
 btnEnd.addEventListener("click", () => {
   dice.removeEventListener("click", rollDice)
+  playfield.classList.add('active')
   actionsList.innerHTML = ''
   if (rolledClass) {
     actionsList.classList.remove(rolledClass)
@@ -145,5 +148,6 @@ btnEnd.addEventListener("click", () => {
 });
 
 toggleSettings.addEventListener('click', () => {
+  playfield.classList.toggle('active')
   document.getElementsByTagName('aside')[0].classList.toggle('open')
 })

@@ -6,12 +6,14 @@ aside {
   background-color: black;
   padding: 2em;
   transform: translateX(150%);
-  transition: transform .5s linear;
+  transition: transform .3s linear;
+  z-index: 1;
+}
 
-  &.open {
-    transform: translateX(0);
-    transition: transform .5s linear;
-  }
+aside.open {
+  transform: translateX(0);
+  transition: transform .3s linear;
+  z-index: 1;
 }
 
 form {

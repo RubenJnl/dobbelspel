@@ -10,11 +10,17 @@
   --font: Helvetica, sans-serif;
 }
 
+html {
+  overflow: hidden;
+  overflow-y: visible;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font);
-  overflow-x: hidden;
+  overflow: hidden;
+  overflow-y: visible;
 
   /* display: grid;
   gap: 2em; */
