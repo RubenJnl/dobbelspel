@@ -10,6 +10,7 @@ let rolledClass = false
 let lastRoll = 1
 let reRollTimeout = false
 let rollTimeout = false
+let resultListTimeout = false
 
 const getRolledNumber = () => {
   // console.info('roll again')
@@ -25,6 +26,9 @@ const rollDice = () => {
   }
   if (rollTimeout) {
     clearTimeout(rollTimeout)
+  }
+  if (resultListTimeout) {
+    clearTimeout(resultListTimeout)
   }
   
   dice.classList.add('spin')
@@ -70,7 +74,7 @@ const rollDice = () => {
     dice.classList.add(rolledClass)
     dice.classList.remove('spin')
 
-    setTimeout(() => {
+    resultListTimeout = setTimeout(() => {
       actionsList.classList.add(rolledClass);
     }, 700)
     
