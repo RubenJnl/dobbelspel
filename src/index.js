@@ -1,4 +1,5 @@
 import css from '../styles/dobbel.css'
+import './fork'
 
 const playfield = document.getElementById('playfield')
 const dice = document.getElementById('dice')
